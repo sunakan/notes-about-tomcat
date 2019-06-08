@@ -1,0 +1,3 @@
+FROM tomcat:9.0.20-jdk8-slim
+WORKDIR /usr/local/tomcat
+RUN apt-get update && apt-get install -y tree vim wget
