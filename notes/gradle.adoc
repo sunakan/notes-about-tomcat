@@ -1,0 +1,19 @@
+== Gradle + Tomcat
+
+link:https://guides.gradle.org/building-java-web-applications/[Building Java Web Applications (Gradleの公式ガイド)]
+
+* 以下でbuild.gradleからgradlewとかが作成できるっぽい
++
+----
+$ gradle wrapper
+バージョン指定したいなら...
+$ gradle wrapper --gradle-version=4.10.3
+----
+
+
+* 基本はgradlewで実行?
++
+----
+# gretty
+$ gradlew appRun
+----

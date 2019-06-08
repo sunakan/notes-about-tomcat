@@ -14,10 +14,11 @@ services:
       - ./my_tomcat/webapps/conf/Catalina/localhost:/usr/local/tomcat/webapps/conf/Catalina/localhost
 
   gradle-tomcat:
+    working_dir: /gradle_web
     build:
       context: .
       dockerfile: dockerfiles/Dockerfile.gradle
     ports:
       - 8080:8080
     volumes:
-      - ./:/app
+      - ./gradle_web:/gradle_web
