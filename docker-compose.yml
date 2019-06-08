@@ -1,0 +1,13 @@
+---
+
+version: "3.7"
+
+services:
+  app:
+    working_dir: /app
+    image: gradle:5.4.1-jdk8
+    ports:
+      - 8983:8983
+    volumes:
+      - ./:/app
+      #- ./solr_home:/opt/solr/server/solr
