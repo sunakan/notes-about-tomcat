@@ -15,4 +15,6 @@ services:
       - 8080:8080
     volumes:
       - ./:/app
+      - ./my_tomcat/webapps/hello:/usr/local/tomcat/webapps/hello
+      - ./my_tomcat/webapps/conf/Catalina/localhost:/usr/local/tomcat/webapps/conf/Catalina/localhost
       #- ./solr_home:/opt/solr/server/solr

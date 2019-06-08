@@ -1,3 +1,37 @@
 = Notes about tomcat
 
 image:https://img.shields.io/badge/license-MIT-blue.svg[MIT, link=MIT-LICENSE]
+
+== Tomcatのみ
+
+----
+$ make tomcat-bash
+----
+
+1. HelloWorld.javaをコンパイル
++
+----
+$ javac -classpath lib/servlet-api.jar -d webapps/hello/WEB-INF/classes/ webapps/hello/HelloWorld.java
+----
+1. web.xmlによりマッピング(URL => どのクラスファイルをサーブレットとしてcallするか)
+1. tomcat起動後ブラウザで `hogehoge.com:8080/hello/helloworld`
+
+=== jsp
+
+* RailsのViewTemplateみたい(hogehoge.html.erb)
+* FugaFuga.jsp
+* tomcatが自動でコンパイルしてくれるらしい
+* ${TOMCAT}/webapps/hogehoge/FugaFuga.jsp
+** ブラウザ:8080/hogehoge/FugaFuga.jspにアクセス可能(大文字小文字の区別は必要)
+* 用意したサンプルファイルだと
+** ブラウザ:8080/hello/HelloTemplate.jsp
+
+=== サーブレットからjspをcall?render?(Controller => Viewみたい)
+
+1. HelloController.javaを用意 & コンパイル(面倒だから*.java)
++
+----
+$ javac -classpath lib/servlet-api.jar -d webapps/hello/WEB-INF/classes/ webapps/hello/*.java
+----
+1. web.xmlにサーブレットとして記述
+1. ブラウザ:8080/hello/test
