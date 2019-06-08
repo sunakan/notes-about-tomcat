@@ -1,3 +1,17 @@
 = Notes about tomcat
 
 image:https://img.shields.io/badge/license-MIT-blue.svg[MIT, link=MIT-LICENSE]
+
+== Tomcatのみ
+
+----
+$ make tomcat-bash
+----
+
+1. HelloWorld.javaをコンパイル
++
+----
+$ javac -classpath lib/servlet-api.jar -d webapps/mywork/WEB-INF/classes/ webapps/mywork/HelloWorld.java
+----
+1. web.xmlによりマッピング(URL => どのクラスファイルをサーブレットとしてcallするか)
+1. tomcat起動後ブラウザで `hogehoge.com:8080/hello/helloworld`
