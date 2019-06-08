@@ -14,4 +14,13 @@
         <url-pattern>/hellowolrd</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>DEF</servlet-name>
+        <servlet-class>HelloController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DEF</servlet-name>
+        <url-pattern>/test</url-pattern>
+    </servlet-mapping>
+
 </web-app>
