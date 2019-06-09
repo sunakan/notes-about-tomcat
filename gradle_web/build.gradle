@@ -1,0 +1,19 @@
+plugins {
+    id 'war'                        // プロジェクトをwar化できるようにするプライグイン
+    id 'org.gretty' version '2.2.0' // Tomcatを1クリックで起動可能なプラグイン
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    providedCompile 'javax.servlet:javax.servlet-api:4.0.1'
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:2.7.19'
+}
+
+gretty {
+    //httpPort = 8080  // デフォで8080
+    //host = "0.0.0.0" // localhostとあったが、0.0.0.0指定がなくてもDocker上で起動していけた
+}

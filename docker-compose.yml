@@ -3,18 +3,22 @@
 version: "3.7"
 
 services:
-  app:
-    #working_dir: /app
-    #image: gradle:5.4.1-jdk8
-    #image: tomcat:9.0.20-jdk8-slim
+  tomcat:
     build:
       context: .
       dockerfile: dockerfiles/Dockerfile.tomcat
     ports:
-      - 8983:8983
       - 8080:8080
     volumes:
-      - ./:/app
       - ./my_tomcat/webapps/hello:/usr/local/tomcat/webapps/hello
       - ./my_tomcat/webapps/conf/Catalina/localhost:/usr/local/tomcat/webapps/conf/Catalina/localhost
-      #- ./solr_home:/opt/solr/server/solr
+
+  gradle-tomcat:
+    working_dir: /gradle_web
+    build:
+      context: .
+      dockerfile: dockerfiles/Dockerfile.gradle
+    ports:
+      - 8080:8080
+    volumes:
+      - ./gradle_web:/gradle_web
